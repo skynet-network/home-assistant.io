@@ -164,6 +164,105 @@ Some of the known valid key values are (may depend on your TV model):
 - `WirelessSubwoofer`
 - `AndroidMenu`
 
+Custom lovlace front card
+
+Link to hacs custom card https://github.com/marrobHD/tv-card
+
+Used volume in channel buttons
+
+{% raw %}
+
+```yaml
+type: custom:TV remote card 
+entity: sun.sun
+name: Livingroom TV
+tv: true
+back:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Return
+backs:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Back
+channeldown:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: VolumeDown
+channelup:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: VolumeUp
+down:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Down
+forward:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Forward
+home:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Home
+guide:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Media
+info:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Info
+left:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Left
+play:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Play
+power:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: TvPower
+reverse:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Rewind
+right:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Right
+select:
+  service: Remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: Confirm
+source:
+  service: remote.send_command
+  service_data:
+    entity_id: remote.sony_bravia_tv
+    command: TvInput
+
+
+{% endraw %}
+
+
+
 ## Extra configuration for the integration
 
 The integration allows you to change ignored TV sources from the front end. Enter which Sony Bravia TV integration you want to change options on and press the cog wheel.
